@@ -88,7 +88,7 @@
             text-transform: lowercase; /* Changed to lowercase */
             color: var(--primary-color);
             animation: text-glow 5s ease-in-out infinite alternate;
-            padding-left: 1.5rem; /* Optical adjustment for letter spacing */
+             /* Removed padding-left to ensure perfect centering */
         }
         
         .subtitle {
@@ -222,7 +222,7 @@
             particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
             const particleMaterial = new THREE.PointsMaterial({
                 color: 0xE6A4B4, // Darker Baby Pink
-                size: 1.2, // Final star size
+                size: 1.4, // Final star size
                 transparent: true,
                 blending: THREE.AdditiveBlending,
                 depthWrite: false,
