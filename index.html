@@ -213,7 +213,7 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(window.devicePixelRatio);
             container.appendChild(renderer.domElement);
-            const particleCount = 2000;
+            const particleCount = 4000;
             const positions = new Float32Array(particleCount * 3);
             for (let i = 0; i < particleCount * 3; i++) {
                 positions[i] = (Math.random() - 0.5) * 1000;
@@ -222,7 +222,7 @@
             particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
             const particleMaterial = new THREE.PointsMaterial({
                 color: 0xE6A4B4, // Darker Baby Pink
-                size: 1.4, // Final star size
+                size: 1.55, // Final star size
                 transparent: true,
                 blending: THREE.AdditiveBlending,
                 depthWrite: false,
@@ -254,8 +254,8 @@
 
             // Add subtle constant rotation for mobile
             if (particles) {
-                particles.rotation.x += 0.00005;
-                particles.rotation.y += 0.0001;
+                particles.rotation.x += 0.0001;
+                particles.rotation.y += 0.0002;
             }
 
             // Mouse interaction on desktop
@@ -283,7 +283,7 @@
         }
 
         // --- Window Load Logic ---
-        window.addEventListener('load', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             initMainScene();
             animate();
         });
